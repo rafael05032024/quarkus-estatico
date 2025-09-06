@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gatinhos 🐱</title>
+  </head>
+  <body>
+    <img id="_c" width="500" height="500"/>
+
+    <script>
+        // Cria um array com todos os caminhos das imagens
+      var imgs = [];
+      var i = 0;
+
+      {#for cat in cats}
+        imgs.push("{cat.localPath}");
+      {/for}
+
+
+      setInterval(function () {
+        var img = document.getElementById("_c");
+
+        img.src = imgs[i];
+
+        i++;
+
+        if (i >= imgs.length) {
+          i = 0;
+        } 
+      }, 2000);
+
+      console.log(imgs);
+    </script>
+  </body>
+</html>
