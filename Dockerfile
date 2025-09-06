@@ -2,6 +2,7 @@
 FROM maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /workspace
 
+RUN ls -l
 # Copia o pom e resolve dependências
 COPY pom.xml .
 RUN mvn dependency:go-offline
